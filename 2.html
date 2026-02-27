@@ -62,7 +62,7 @@
         /* Tu script existente AOS.init() y otros scripts si es necesario */
 
       
-        const carouselItems = document.querySelectorAll(".carousel-item");
+    const carouselItems = document.querySelectorAll(".carousel-item");
     const prevButton = document.querySelector(".carousel-prev");
     const nextButton = document.querySelector(".carousel-next");
     let currentIndex = 0;
@@ -77,6 +77,9 @@
         });
     }
 
+    function navigateToImage(imageNumber) {
+        window.location.href = `./${imageNumber}.html`
+    }
     prevButton.addEventListener("click", () => {
         currentIndex = (currentIndex - 1 + carouselItems.length) % carouselItems.length;
         showImage(currentIndex);
@@ -90,10 +93,8 @@
     });
 
     showImage(currentIndex);
-
-    function navigateToImage(imageNumber) {
-        window.location.href = `http://127.0.0.1:5500/${imageNumber}.html`;
-    }
+    navigateToImage(currentIndex + 1);
+    
     </script>
 </body>
 </html>
